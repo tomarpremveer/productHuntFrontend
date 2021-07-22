@@ -1,0 +1,61 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "no-new-func":"warn",
+        "no-extra-parens":"warn",
+        "no-extra-semi":"warn",
+        "no-setter-return":"warn",
+        "no-unreachable":"warn",
+        "curly":"warn",
+        "no-useless-return":"warn",
+        "no-useless-constructor":"warn",
+        "vars-on-top":"warn",
+        "require-await":"warn",
+        "no-delete-var":"warn",
+        "camelcase":"warn",
+        "new-cap":"warn",
+        "default-param-last":"warn",
+        "no-eval":"error",
+        "space-before-blocks":"warn",
+        "space-before-function-paren":"warn",
+        "prefer-destructuring":"warn",
+        "prefer-spread":"warn",
+        "prefer-template":"warn",
+        "function-paren-newline":"warn",
+        "prefer-arrow-callback":"warn",
+        "no-confusing-arrow":"warn",
+        "object-curly-newline":"warn",
+        "no-iterator":"warn",
+        "no-restricted-syntax":"warn",
+        "generator-star-spacing":"warn",
+        "no-restricted-properties":"warn",
+        "no-undef":"warn",
+        "no-multi-assign":"warn",
+        "no-plusplus":"warn",
+        "no-unused-vars":"warn",
+        "no-nested-ternary":"warn",
+        "brace-style":"warn",
+        "spaced-comment":"warn",
+        "indent":"warn",
+        "space-infix-ops":"warn",
+        "no-multiple-empty-lines":"warn",
+        "comma-spacing":"warn"
+    }
+}

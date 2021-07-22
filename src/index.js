@@ -1,23 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
-import reportWebVitals from "./reportWebVitals";
-import { Provider } from "react-redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import { createStore, combineReducers } from "redux";
-import ProductReducers from "./reducers/ProductReducers";
-const store = createStore(
-  combineReducers({ Products: ProductReducers }),
-  composeWithDevTools()
-);
+import ErrorBoundary from "./components/ErrorBoundary";
+import './index.css';
+import Root from "./Root";
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById("root")
+    <Root>
+        <ErrorBoundary>
+            <App />
+        </ErrorBoundary>
+    </Root>,
+    document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+

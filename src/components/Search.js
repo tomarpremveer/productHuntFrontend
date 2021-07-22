@@ -1,28 +1,36 @@
-import React, { useState } from "react";
+import React, {useState, useEffect} from "react";
 
+// eslint-disable-next-line no-unused-vars
 const Search = (props) => {
-  const [searchText, setSearchText] = useState("");
-  return (
-    <div>
-      <form className="d-flex">
-        <input
-          id="searchBox"
-          className="form-control me-2"
-          type="search"
-          value={searchText}
-          onChange={(e) => handleInputChange(setSearchText, e)}
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button className="btn btn-outline-success" type="submit">
-          Search
-        </button>
-      </form>
-    </div>
-  );
+    const [searchText, setSearchText] = useState("");
+    useEffect(() => {
+        // TODO Create a debounced autosuggestion function and use here.
+        if(searchText != "") {
+            console.log("function is called");
+        }
+        return () => {
+            console.log("This cleanup function was called")
+        };
+    }, [searchText])
+    return (
+        <div>
+            <form className="d-flex">
+                <div className="form-group">
+                    <input
+                        id="searchBox"
+                        className="form-control me-2 form-control-sm"
+                        type="search"
+                        value={searchText}
+                        onChange={(e) => handleInputChange(setSearchText, e)}
+                        placeholder="Search"
+                        aria-label="Search"
+                    />
+                </div>
+            </form>
+        </div>
+    );
 };
 const handleInputChange = (setSearchText, event) => {
-  console.log("the input value is", event.target.value);
-  setSearchText(event.target.value);
+    setSearchText(event.target.value);
 };
 export default Search;
